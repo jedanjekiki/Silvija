@@ -10,7 +10,9 @@
             margin: 0; 
             background-color: var(--light-bg); 
             color: #333; 
-            line-height: 1.6; }
+            line-height: 1.6;
+            letter-spacing: 1px;
+        }
         
         /* Navigacija */
        /* --- NOVI MENI I NAVIGACIJA --- */
@@ -209,7 +211,10 @@
             z-index: 2000;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
-        .viber-content { display: flex; align-items: center; gap: 10px; }
+        .viber-content { display: flex; 
+            align-items: center; 
+            gap: 10px; }
+
 
         /* Foto galerija - placeholderi za njene slike */
         .gallery { padding: 50px 20px;
@@ -253,8 +258,8 @@
             font-size: 12px;
             transition: color 0.3s;
             text-align: left;
-            margin-right: 15px;
             min-width: 200px;
+            margin-right: 15px;
         }
         .footer-menu a:hover { 
             color: var(--gold) !important; 
@@ -272,13 +277,16 @@
             flex: 1;
             text-align: center;
         }
+        .social-links {
+            margin-right: 100px;
+        }
 
         .social-links a { 
             color: var(--gold); 
             font-size: 1.8rem; 
             margin: 0; 
             transition: 0.3s;
-            text-align: right;
+            text-align: center;
             flex: 1;
         }
         .social-links a:hover { color: white; 
@@ -312,15 +320,28 @@
             }
 
             .nav-links.active { display: flex; } /* Prikaži kad se klikne */
+             .nav-links a {
+                padding: 10px 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .footer-menu, .footer-copy, .social-links {
+                text-align: center; /* Sve centrirano na telefonu */
+                flex: none;
+                margin: 0;
+                width: 200px;
+            }
+            .viber-float{
+                border-radius: 20px;
+                padding: 10px 15px;
+                bottom: 10px;
+                right: 10px;
+                font-size: 16px;
+            }
+            .viber-btn-simple {
+                font-size: 16px;
+            }
+
         }
 
-        .nav-links a {
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .footer-menu, .footer-copy, .social-links {
-            text-align: center; /* Sve centrirano na telefonu */
-            flex: none;
-        }
        
