@@ -56,7 +56,14 @@
             font-size: 1.8rem;
             cursor: pointer;
             color: var(--gold) !important;
-}
+            border: 1px solid #4b6986 !important;
+            border-radius: 10px;
+            padding: 5px;
+        }
+        .menu-icon-paw:hover { 
+            color: var(--white) !important;
+        }
+
         .logo { 
             color: var(--gold) !important;
             font-size: 1.8rem; 
@@ -99,6 +106,8 @@
         /* Stil za glavni naslov */
         .hero h1 {
             font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
             margin-bottom: 20px;
             color: var(--gold); /* Zlatna boja naslova */
             line-height: 1.2;
@@ -193,7 +202,8 @@
             transition: 0.3s;
         }
 
-        .viber-btn-simple:hover {
+        .viber-btn-simple:hover, 
+        .viber-float:hover {
             background-color: #5e4cc4;
             transform: translateY(-3px);
         }
@@ -201,8 +211,8 @@
         /* PLUTAJUĆE VIBER DUGME */
         .viber-float {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 50px;
+            right: 10px;
             background: #7360f2;
             color: white !important;
             padding: 12px 20px;
@@ -236,7 +246,7 @@
         /* Footer */
         .row {
             display: flex;
-            justify-content: space-between;
+            justify-content:space-between;
             align-items: center;
             margin: 0 auto;
             max-width: 1100px;
@@ -248,14 +258,18 @@
             background: var(--dark-blue);
             color: white; 
             padding: 20px 30px; 
-            text-align: center;
+            text-align: left;
         }  
+
+        .footer-menu{
+            line-height: 1.3;
+        }
         .footer-menu a {
             flex: 1;
             color: var(--white) !important;
             text-decoration: none;
             font-weight: 400;
-            font-size: 12px;
+            font-size: 14px;
             transition: color 0.3s;
             text-align: left;
             min-width: 200px;
@@ -265,9 +279,12 @@
             color: var(--gold) !important; 
         }
 
-        h3 {
+        h2 {
+            text-transform: uppercase;
             color: var(--gold);
-            margin-bottom: 5px;
+            margin-bottom: 0px;
+            line-height: 1.2;
+            letter-spacing: 2px;
         }
 
         .footer-copy {
@@ -277,9 +294,9 @@
             flex: 1;
             text-align: center;
         }
-        .social-links {
-            margin-right: 100px;
-        }
+       /* .social-links {
+            margin-right: 200px;
+        }*/
 
         .social-links a { 
             color: var(--gold); 
@@ -296,16 +313,28 @@
      /* RESPONSIVE ZA MOBILNI */
      @media (max-width: 768px) {
            .row{
+            display:block;
             flex-direction: column;
-            gap: 25px;
            }
             /* Hero: Slika ide ispod teksta */
-            .hero { flex-direction: column; text-align: center; padding-top: 30px; }
-            .hero-content { text-align: center; }
-            .hero-img { max-width: 80%; margin-top: 30px; }
+            .hero { flex-direction: column; 
+                text-align: center; 
+                padding-top: 30px; 
+            }
+            .hero h1 {
+                font-size: 36px;
+            }
+            .hero p { font-size: 20 px; 
+            }
+            .hero-content { text-align: center; 
+            }
+
+            .hero-img { max-width: 80%; 
+                margin-top: 30px; }
 
             /* Meni: Pojavljuje se šapa, linkovi se kriju */
-            .menu-icon-paw { display: block; }
+            .menu-icon-paw { display: block; 
+                }
             
             .nav-links {
                 display: none; /* Sakrij po defaultu */
@@ -325,18 +354,15 @@
                 border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             }
             
-            .footer-menu, .footer-copy, .social-links {
-                text-align: center; /* Sve centrirano na telefonu */
+            .footer-menu, h2, .footer-copy, .social-links {
+                text-align: left; /* Sve ulevo na telefonu */
                 flex: none;
-                margin: 0;
+                padding-top: 10px;
                 width: 200px;
             }
             .viber-float{
-                border-radius: 20px;
-                padding: 10px 15px;
                 bottom: 10px;
                 right: 10px;
-                font-size: 16px;
             }
             .viber-btn-simple {
                 font-size: 16px;
