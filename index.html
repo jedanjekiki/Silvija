@@ -11,26 +11,28 @@
 </head>
 <body>
 
+    <div id="overlay" onclick="closeMenu()"></div>
+
     <nav>
     <div class="nav-container">
         <div class="logo">Pet Salon Carstvo Pasa</div>
         
-        <div class="menu-icon-paw" id="mobile-menu-btn">
+        <div class="menu-icon-paw" id="mobile-menu-btn" onclick="toggleMenu()">
             <i class="fas fa-paw"></i>
         </div>
 
         <ul class="nav-links" id="nav-links">
-            <li><a href="#home">Početna</a></li>
-            <li><a href="#usluge">Usluge</a></li>
-            <li><a href="#rezervacija">Rezervacija</a></li>
+            <li><a href="#home" onclick="closeMenu()">Početna</a></li>
+            <li><a href="#usluge" onclick="closeMenu()">Usluge</a></li>
+            <li><a href="#rezervacija" onclick="closeMenu()">Rezervacija</a></li>
         </ul>
     </div>
     </nav>
     
     <header class="hero" id="home">
         <div class="hero-text-container">
-            <h1>Profesionalna Nega Pasa</h1>
-            <p>Vrhunski tretmani za Vaše ljubimce u srcu Sombora.<br> Zakažite termin za par sekundi.</p>
+            <h1>Profesionalna<br> Nega Pasa</h1>
+            <p>Vrhunski tretmani za Vaše<br> ljubimce u srcu Sombora.<br> Zakažite termin za par sekundi.</p>
         </div>
     </header>
 
@@ -57,7 +59,7 @@
         <div class="section-header">
             <h2>Online Rezervacija</h2>
             <div class="underline"></div>
-            <p>Odaberite slobodan datum i vreme koji Vam najviše odgovaraju.</p>
+            <p>Odaberite slobodan datum i vreme koje Vam najviše odgovaraju.</p>
         </div>
 
         <div class="booking-card">
@@ -72,7 +74,7 @@
                 <a href="viber://chat?number=%2B381642097606" class="viber-btn-simple">
                     <i class="fab fa-viber"></i> POŠALJI PORUKU NA VIBER
                 </a>
-                <p><b>Samo nam napišite ime, rasu psa i kada Vam odgovara.</b></p>
+                <p><b>Samo napišite ime, rasu psa i kada Vam odgovara.</b></p>
             </div>
         </section>
 
@@ -116,12 +118,22 @@
     </a>
 
     <script>
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const navLinks = document.getElementById('nav-links');
 
-        menuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
+    /* THIS MUST EXIST */
+        document.getElementById("overlay").addEventListener("click", closeMenu);
+
+        function toggleMenu() {
+            document.getElementById("nav-links").classList.toggle("active");
+            document.getElementById("overlay").classList.toggle("active");
+            document.getElementById("mobile-menu-btn").classList.toggle("active");
+        }
+
+        function closeMenu() {
+            document.getElementById("nav-links").classList.remove("active");
+            document.getElementById("overlay").classList.remove("active");
+            document.getElementById("mobile-menu-btn").classList.remove("active");
+        }
+
     </script>
 
 </body>
